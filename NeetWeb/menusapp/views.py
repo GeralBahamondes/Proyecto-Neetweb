@@ -8,9 +8,24 @@ from django.contrib.auth.hashers import make_password
 from django.http import HttpResponseForbidden
 
 
+
 def index(request):
     return render(request, 'logins/index.html')
 
+def mangas(request):
+    return render(request, 'web/mangas.html')
+
+def ropa(request):
+    return render(request, 'web/ropa.html')
+
+def figuras(request):
+    return render(request, 'web/figuras.html')
+
+def otros(request):
+    return render(request, 'web/otros.html')
+
+def politicas(request):
+    return render(request, 'web/politicas.html')
 
 
 def register(request):
@@ -25,10 +40,6 @@ def register(request):
 
         
         if password == re_password:
-          
-           
-
-          
             user = User.objects.create(
                 username=rut,
                 first_name=nombre,
@@ -37,7 +48,7 @@ def register(request):
                 password=make_password(password) 
             )
 
-          
+
             cliente = Cliente.objects.create(
                 usuario=user,
                 nombre=nombre
@@ -70,7 +81,6 @@ def cerrar_sesion(request):
     return redirect('/')
 
 @login_required
-@user_passes_test(lambda u: u.is_superuser, login_url='inicio')
 def dashboard(request):
     users = User.objects.all()
     data = {'users':users}

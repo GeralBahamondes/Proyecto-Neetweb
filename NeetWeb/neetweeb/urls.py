@@ -12,5 +12,9 @@ urlpatterns = [
     path('crear_usuario/', views.crear_usuario, name='crear_usuario'),
     path('crear_menu/', views.crear_menu, name='crear_menu'),
     path('listar_menu/', views.listar_menu, name='listar_menu'),
-
+    path('mangas/', views.mangas),
+    path('ropa/', views.ropa),
+    path('figuras/', views.figuras),
+    path('otros/', views.otros),
+    path('politicas/', views.politicas),
 ]

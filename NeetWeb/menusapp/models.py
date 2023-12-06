@@ -59,3 +59,7 @@ class ItemCarrito(models.Model):
 
     def get_cost(self):
         return self.precio * self.cantidad
+    
+
+    def __str__(self):
+        return self.nombre
