@@ -1,0 +1,42 @@
+{% extends 'logins/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h2>{{ producto.nombre }}</h2>
+            <p>{{ producto.descripcion }}</p>
+            <p>Precio: ${{ producto.precio }}</p>
+
+            {% if producto.disponible %}
+                <p class="text-success">Disponible</p>
+                <!-- Agrega aquí cualquier otra información relevante -->
+            {% else %}
+                <p class="text-danger">No Disponible</p>
+                <!-- Puedes agregar un mensaje o lógica adicional si no está disponible -->
+            {% endif %}
+
+            <!-- Agrega más detalles según sea necesario -->
+
+            <form action="{% url 'agregar_al_carrito' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="producto_id" value="{{ producto.id }}">
+                <button type="submit" class="btn btn-primary btn-sm">Agregar al Carrito</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="espacio-footer"></div>
+<p></p>
+<div class="espacio-footer"></div>
+
+
+
+
+{% endblock %}

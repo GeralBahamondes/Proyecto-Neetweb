@@ -1,0 +1,79 @@
+{% extends 'logins/base.html' %}
+{%load static%}
+{% block title %}
+Inicio
+{% endblock title %}
+
+{% block header %}
+<img class="banner" src="{% static 'imagenes/Banner.png' %}"></img>
+  
+
+{% endblock header %}
+
+<p></p>
+
+{% block content %}
+<center>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="opciones">
+            <img class="image" src="{% static 'imagenes/mangas.png' %}" alt="Ropa">
+            <div class="text-box">
+                <h1>MANGAS</h1>
+                <h1>≧◠ᴥ◠≦✊</h1>
+                <p></p>
+                <a href="/listar_productos" class="btn btn-primary">Ver Mangas</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="opciones">
+            <img class="image2" src="{% static 'imagenes/ropa.png' %}" alt="Ropa">
+            <div class="text-box">
+                <h1>Ropa :3</h1>
+                <h1>(>‿◠)✌</h1>
+                <p></p>
+                <a href="/listar_productos" class="btn btn-primary">Ver Ropa</a>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
+    <p></p>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <div class="opciones">
+            <img class="image" src="{% static 'imagenes/figuras.png' %}" alt="Ropa">
+            <div class="text-box">
+                <h1>Figuras</h1>
+                <h1> ʕ•́ᴥ•̀ʔっ♡</h1>
+                <p></p>
+                <a href="/listar_productos" class="btn btn-primary">Ver Figuras</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="opciones">
+            <img class="image2" src="{% static 'imagenes/otros.png' %}" alt="Ropa">
+            <div class="text-box">
+                <h1>Otros</h1>
+                <h1>(>‿<)</h1>
+                <p></p>
+                <a href="/listar_productos" class="btn btn-primary">Ver Otros</a>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+</center>
+
+{% endblock content %}
